@@ -114,7 +114,7 @@ def image_align(src_file,
     img = img.transform((transform_size, transform_size), PIL.Image.QUAD,
                         (quad + 0.5).flatten(), PIL.Image.BILINEAR)
     if output_size < transform_size:
-        img = img.resize((output_size, output_size), PIL.Image.ANTIALIAS)
+        img = img.resize((output_size, output_size), PIL.Image.LANCZOS)
 
     # Save aligned image.
     img.save(dst_file, 'PNG')
