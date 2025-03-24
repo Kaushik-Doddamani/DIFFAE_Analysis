@@ -11,14 +11,13 @@ A CVPR 2022 (ORAL) paper ([paper](https://openaccess.thecvf.com/content/CVPR2022
       year={2022},
 }
 ```
+Reproduction Results: [Google Colab Implementation](https://colab.research.google.com/drive/1rR7RZBivNedJZkaHleuiYXs8fYaYdcOX?usp=sharing)
 
 ## Usage
 
 ⚙️ Try a Colab walkthrough: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://drive.google.com/file/d/1OTfwkklN-IEd4hFk4LnweOleyDtS4XTh/view?usp=sharing)
 
 🤗 Try a web demo: [![Replicate](https://replicate.com/cjwbw/diffae/badge)](https://replicate.com/cjwbw/diffae)
-
-Note: Since we expect a lot of changes on the codebase, please fork the repo before using.
 
 ### Prerequisites
 
