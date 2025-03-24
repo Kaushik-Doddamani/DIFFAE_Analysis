@@ -55,7 +55,7 @@ Original in <code>imgs</code> directory<br><img src="imgs_/Kaushik_Ningappa_Dodd
 Aligned with <code>align.py</code><br><img src="imgs_align/Kaushik_Ningappa_Doddamani.png" style="width: 100%">
 </th>
 <th width="33%">
-Using <code>manipulate.ipynb</code><br><img src="imgs_manipulated/result.png" style="width: 100%">
+Using <code>manipulate.ipynb</code><br><img src="imgs_manipulated/results.png" style="width: 100%">
 </th>
 </tr>
 </table>
