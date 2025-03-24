@@ -63,7 +63,7 @@ Using <code>manipulate.ipynb</code><br><img src="imgs_manipulated/results.png" s
 
 ### Checkpoints
 
-We provide checkpoints for the following models:
+The original repo provides checkpoints for the following models:
 
 1. DDIM: **FFHQ128** ([72M](https://drive.google.com/drive/folders/1-fa46UPSgy9ximKngBflgSj3u87-DLrw), [130M](https://drive.google.com/drive/folders/1-Sqes07fs1y9sAYXuYWSoDE_xxTtH4yx)), [**Bedroom128**](https://drive.google.com/drive/folders/1-_8LZd5inoAOBT-hO5f7RYivt95FbYT1), [**Horse128**](https://drive.google.com/drive/folders/10Hq3zIlJs9ZSiXDQVYuVJVf0cX4a_nDB)
 2. DiffAE (autoencoding only): [**FFHQ256**](https://drive.google.com/drive/folders/1-5zfxT6Gl-GjxM7z9ZO2AHlB70tfmF6V), **FFHQ128** ([72M](https://drive.google.com/drive/folders/10bmB6WhLkgxybkhso5g3JmIFPAnmZMQO), [130M](https://drive.google.com/drive/folders/10UNtFNfxbHBPkoIh003JkSPto5s-VbeN)), [**Bedroom128**](https://drive.google.com/drive/folders/12EdjbIKnvP5RngKsR0UU-4kgpPAaYtlp), [**Horse128**](https://drive.google.com/drive/folders/12EtTRXzQc5uPHscpjIcci-Rg-OGa_N30)
@@ -87,14 +87,14 @@ checkpoints/
 
 ### LMDB Datasets
 
-We do not own any of the following datasets. We provide the LMDB ready-to-use dataset for the sake of convenience.
+We do not own any of the following datasets. The repo provide the LMDB ready-to-use dataset for the sake of convenience.
 
 - [FFHQ](https://1drv.ms/f/s!Ar2O0vx8sW70uLV1Ivk2pTjam1A8VA)
 - [CelebAHQ](https://1drv.ms/f/s!Ar2O0vx8sW70uL4GMeWEciHkHdH6vQ) 
 
 **Broken links**
 
-Note: I'm trying to recover the following links. 
+Note: Trying to recover the following links. 
 
 - [CelebA](https://drive.google.com/drive/folders/1HJAhK2hLYcT_n0gWlCu5XxdZj-bPekZ0?usp=sharing) 
 - [LSUN Bedroom](https://drive.google.com/drive/folders/1O_3aT3LtY1YDE2pOQCp6MFpCk7Pcpkhb?usp=sharing)
@@ -111,7 +111,7 @@ datasets/
 - horse256.lmdb
 ```
 
-You can also download from the original sources, and use our provided codes to package them as LMDB files.
+You can also download from the original sources, and use provided codes to package them as LMDB files.
 Original sources for each dataset is as follows:
 
 - FFHQ (https://github.com/NVlabs/ffhq-dataset)
@@ -134,7 +134,7 @@ Google drive: https://drive.google.com/drive/folders/1abNP4QKGbNnymjn8607BF0cwxX
 
 ## Training
 
-We provide scripts for training & evaluate DDIM and DiffAE (including latent DPM) on the following datasets: FFHQ128, FFHQ256, Bedroom128, Horse128, Celeba64 (D2C's crop).
+The repo provide scripts for training & evaluate DDIM and DiffAE (including latent DPM) on the following datasets: FFHQ128, FFHQ256, Bedroom128, Horse128, Celeba64 (D2C's crop).
 Usually, the evaluation results (FID's) will be available in `eval` directory.
 
 Note: Most experiment requires at least 4x V100s during training the DPM models while requiring 1x 2080Ti during training the accompanying latent DPM. 
