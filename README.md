@@ -1,4 +1,5 @@
-# Official implementation of Diffusion Autoencoders
+# Code Reproduction of Diffusion Autoencoders
+## Course: Advanced Topics in AI (EE6180)
 
 A CVPR 2022 (ORAL) paper ([paper](https://openaccess.thecvf.com/content/CVPR2022/html/Preechakul_Diffusion_Autoencoders_Toward_a_Meaningful_and_Decodable_Representation_CVPR_2022_paper.html), [site](https://diff-ae.github.io/), [5-min video](https://youtu.be/i3rjEsiHoUU)):
 
