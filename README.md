@@ -47,7 +47,7 @@ Aligning your own images:
 <table>
 <tr>
 <th width="33%">
-Original in <code>imgs</code> directory<br><img src="imgs_/Kaushik_Ningappa_Doddamani.JPG" style="width: 100%">
+Original in <code>imgs_</code> directory<br><img src="imgs_/Kaushik_Ningappa_Doddamani.JPG" style="width: 100%">
 </th>
 <th width="33%">
 Aligned with <code>align.py</code><br><img src="imgs_align/Kaushik_Ningappa_Doddamani.png" style="width: 100%">
