@@ -1,6 +1,8 @@
 # Code Reproduction of Diffusion Autoencoders
 ## Course: Advanced Topics in AI (EE6180)
 
+Reproduction Results: [Google Colab Implementation](https://colab.research.google.com/drive/1rR7RZBivNedJZkaHleuiYXs8fYaYdcOX?usp=sharing)
+
 A CVPR 2022 (ORAL) paper ([paper](https://openaccess.thecvf.com/content/CVPR2022/html/Preechakul_Diffusion_Autoencoders_Toward_a_Meaningful_and_Decodable_Representation_CVPR_2022_paper.html), [site](https://diff-ae.github.io/), [5-min video](https://youtu.be/i3rjEsiHoUU)):
 
 ```
@@ -11,7 +13,6 @@ A CVPR 2022 (ORAL) paper ([paper](https://openaccess.thecvf.com/content/CVPR2022
       year={2022},
 }
 ```
-Reproduction Results: [Google Colab Implementation](https://colab.research.google.com/drive/1rR7RZBivNedJZkaHleuiYXs8fYaYdcOX?usp=sharing)
 
 ## Usage
 
@@ -48,13 +49,13 @@ Aligning your own images:
 <table>
 <tr>
 <th width="33%">
-Original in <code>imgs</code> directory<br><img src="imgs/sandy.JPG" style="width: 100%">
+Original in <code>imgs</code> directory<br><img src="imgs_/Kaushik_Ningappa_Doddamani.JPG" style="width: 100%">
 </th>
 <th width="33%">
-Aligned with <code>align.py</code><br><img src="imgs_align/sandy.png" style="width: 100%">
+Aligned with <code>align.py</code><br><img src="imgs_align/Kaushik_Ningappa_Doddamani.png" style="width: 100%">
 </th>
 <th width="33%">
-Using <code>manipulate.ipynb</code><br><img src="imgs_manipulated/sandy-wavyhair.png" style="width: 100%">
+Using <code>manipulate.ipynb</code><br><img src="imgs_manipulated/result.png" style="width: 100%">
 </th>
 </tr>
 </table>
