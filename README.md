@@ -7,12 +7,34 @@ A CVPR 2022 (ORAL) paper ([paper](https://openaccess.thecvf.com/content/CVPR2022
 
 ```
 @inproceedings{preechakul2021diffusion,
-      title={Diffusion Autoencoders: Toward a Meaningful and Decodable Representation}, 
+      title={Diffusion Autoencoders: Toward a Meaningful and Decodable Representation},
       author={Preechakul, Konpat and Chatthee, Nattanat and Wizadwongsa, Suttisak and Suwajanakorn, Supasorn},
-      booktitle={IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+      booktitle={IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
       year={2022},
 }
 ```
+
+## Paper Contributions
+This implementation reproduces and extends the key innovations of Diffusion Autoencoders:
+
+1. **Decoupling Semantic and Stochastic Information**: A deterministic encoder extracts a low-dimensional semantic code ($z_{sem}$), while a conditional DDIM captures fine details via a stochastic code ($x_T$).
+2. **Conditional Generative Refinement**: The diffusion decoder iteratively injects stochastic details onto the semantic backbone for high-fidelity reconstruction.
+3. **Interpretable and Manipulable Latent Space**: Linear interpolations and vector arithmetic in $z_{sem}$ yield smooth, meaningful edits without sacrificing detail.
+4. **Empirical Validation**: Outperforms standard VAEs in both reconstruction quality and sample diversity.
+
+## Experiments Included
+### 1. Reproduced Experiments
+- **Real-Image Attribute Manipulation**: Edit facial attributes (e.g., Young, Blond Hair, Beard) by shifting $z_{sem}$ and decoding with conditioned DDIM. 
+- **Latent Interpolation**: Perform linear and spherical interpolations in $(z_{sem}, x_T)$ to morph between two real faces.
+- **Unconditional Sample Generation**: Sample from the learned semantic prior and decode to generate diverse, high-fidelity faces in just 20 diffusion steps.
+
+[Colab Notebook](https://colab.research.google.com/drive/17t8d-iqGAst0NdGLxYULmxeFYtXJOyix?usp=sharing)
+
+### 2. New Experiments
+- **Robustness to Input Corruptions**: Measure cosine similarity of semantic codes under increasing Gaussian noise levels to verify stability. [Colab Notebook](https://drive.google.com/file/d/1In-I7qH0m_UErhA-6uuwTR94tD-WBDp-/view?usp=sharing)
+- **Linear Probing for Disentanglement**: Train logistic probes on $z_{sem}$ for 40 CelebA attributes, reporting per-attribute AUROC and mean performance. [Colab Notebook](https://drive.google.com/file/d/1f7qgcsvuw8WQsfiK8UTMNDz4hN-YfEHW/view?usp=sharing)
+- **Pure-Semantic vs. Full-Latent Interpolation**: Compare detail preservation and LPIPS smoothness between fixed and varying stochastic codes. [Colab Notebook](https://drive.google.com/file/d/1W8Tp_ufnaTJ0aiBRqm5abjscju3OgLq4/view?usp=sharing)
+- **Stochastic-Encoder Variability**: Decode multiple $x_T$ samples for a fixed $z_{sem}$ to quantify fine-detail diversity via pixel variance and LPIPS. [Colab Notebook](https://drive.google.com/file/d/1odO8c8iTQGhjeXssR81CISX3hmAaQOlD/view?usp=sharing)
 
 ## Usage
 
@@ -58,7 +80,6 @@ Using <code>manipulate.ipynb</code><br><img src="imgs_manipulated/results.png" s
 </tr>
 </table>
 
-
 ### Checkpoints
 
 The original repo provides checkpoints for the following models:
@@ -68,7 +89,7 @@ The original repo provides checkpoints for the following models:
 3. DiffAE (with latent DPM, can sample): [**FFHQ256**](https://drive.google.com/drive/folders/1-H8WzKc65dEONN-DQ87TnXc23nTXDTYb), [**FFHQ128**](https://drive.google.com/drive/folders/11pdjMQ6NS8GFFiGOq3fziNJxzXU1Mw3l), [**Bedroom128**](https://drive.google.com/drive/folders/11mdxv2lVX5Em8TuhNJt-Wt2XKt25y8zU), [**Horse128**](https://drive.google.com/drive/folders/11k8XNDK3ENxiRnPSUdJ4rnagJYo4uKEo)
 4. DiffAE's classifiers (for manipulation): [**FFHQ256's latent on CelebAHQ**](https://drive.google.com/drive/folders/117Wv7RZs_gumgrCOIhDEWgsNy6BRJorg), [**FFHQ128's latent on CelebAHQ**](https://drive.google.com/drive/folders/11EYIyuK6IX44C8MqreUyMgPCNiEnwhmI)
 
-Checkpoints ought to be put into a separate directory `checkpoints`. 
+Checkpoints ought to be put into a separate directory `checkpoints`.
 Download the checkpoints and put them into `checkpoints` directory. It should look like this:
 
 ```
@@ -88,13 +109,13 @@ checkpoints/
 We do not own any of the following datasets. The repo provide the LMDB ready-to-use dataset for the sake of convenience.
 
 - [FFHQ](https://1drv.ms/f/s!Ar2O0vx8sW70uLV1Ivk2pTjam1A8VA)
-- [CelebAHQ](https://1drv.ms/f/s!Ar2O0vx8sW70uL4GMeWEciHkHdH6vQ) 
+- [CelebAHQ](https://1drv.ms/f/s!Ar2O0vx8sW70uL4GMeWEciHkHdH6vQ)
 
 **Broken links**
 
-Note: Trying to recover the following links. 
+Note: Trying to recover the following links.
 
-- [CelebA](https://drive.google.com/drive/folders/1HJAhK2hLYcT_n0gWlCu5XxdZj-bPekZ0?usp=sharing) 
+- [CelebA](https://drive.google.com/drive/folders/1HJAhK2hLYcT_n0gWlCu5XxdZj-bPekZ0?usp=sharing)
 - [LSUN Bedroom](https://drive.google.com/drive/folders/1O_3aT3LtY1YDE2pOQCp6MFpCk7Pcpkhb?usp=sharing)
 - [LSUN Horse](https://drive.google.com/drive/folders/1ooHW7VivZUs4i5CarPaWxakCwfeqAK8l?usp=sharing)
 
@@ -135,8 +156,7 @@ Google drive: https://drive.google.com/drive/folders/1abNP4QKGbNnymjn8607BF0cwxX
 The repo provide scripts for training & evaluate DDIM and DiffAE (including latent DPM) on the following datasets: FFHQ128, FFHQ256, Bedroom128, Horse128, Celeba64 (D2C's crop).
 Usually, the evaluation results (FID's) will be available in `eval` directory.
 
-Note: Most experiment requires at least 4x V100s during training the DPM models while requiring 1x 2080Ti during training the accompanying latent DPM. 
-
+Note: Most experiment requires at least 4x V100s during training the DPM models while requiring 1x 2080Ti during training the accompanying latent DPM.
 
 
 **FFHQ128**
@@ -196,3 +216,4 @@ This experiment can be run on 2080Ti's.
 # diffae
 python run_celeba64.py
 ```
+
